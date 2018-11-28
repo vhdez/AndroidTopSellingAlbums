@@ -41,7 +41,7 @@ public class Controller {
     }
 
     private void displayCurrent() {
-        countText.setText("Pet #" + (topSellingAlbums.currentIndex()+1) + " of " + topSellingAlbums.count());
+        countText.setText("Top Selling Album #" + (topSellingAlbums.currentIndex()+1) + " of " + topSellingAlbums.count());
         titleText.setText(topSellingAlbums.current().title());
         descriptionText.setText(topSellingAlbums.current().description());
     }
