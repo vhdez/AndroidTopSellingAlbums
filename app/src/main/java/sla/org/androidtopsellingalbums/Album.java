@@ -13,13 +13,12 @@ class Album {
     // Constructor
     Album(String albumData) {
         // Split up albumData into 7 parts as separated by tab characters (\t) or tab
-        String[] parts = albumData.split("\\t+", 7);
+        String[] parts = albumData.split("\\t+", 6);
         artist = parts[0];
         album = parts[1];
         year = Integer.parseInt(parts[2]);
         genre = parts[3];
-        copies = Float.parseFloat(parts[4]);
-        sales = Integer.parseInt(parts[5]);
+        sales = Integer.parseInt(parts[4]);
     }
 
     // Methods
@@ -28,6 +27,6 @@ class Album {
     }
 
     String description() {
-        return "Year: " + year + "\nGenre: " + genre + "\nTotal Certified Copies: " + copies + " million\nClaimed sales: " + sales + " million";
+        return "Year: " + year + "\nGenre: " + genre + "\nClaimed sales: " + sales + " million";
     }
 }
