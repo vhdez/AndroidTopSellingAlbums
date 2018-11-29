@@ -13,7 +13,7 @@ public class Controller {
     private TextView titleText;
     private TextView descriptionText;
 
-    private Displayable topSellingAlbums;
+    private Model topSellingAlbums;
 
     Controller(Button p, TextView c, Button n, TextView tt, TextView dt, Context ctxt) {
         prevButton = p;

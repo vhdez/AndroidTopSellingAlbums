@@ -12,6 +12,7 @@ class Album {
 
     // Constructor
     Album(String albumData) {
+        // Split up albumData into 7 parts as separated by tab characters (\t) or tab
         String[] parts = albumData.split("\\t+", 7);
         artist = parts[0];
         album = parts[1];

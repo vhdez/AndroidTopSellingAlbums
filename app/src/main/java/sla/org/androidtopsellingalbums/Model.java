@@ -1,6 +1,6 @@
 package sla.org.androidtopsellingalbums;
 
-public interface Displayable {
+public interface Model {
     void previous();
     void next();
     String countText();

@@ -6,7 +6,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-class Albums implements Displayable {
+class Albums implements Model {
     private ArrayList<Album> albums;
     private int current;
 
