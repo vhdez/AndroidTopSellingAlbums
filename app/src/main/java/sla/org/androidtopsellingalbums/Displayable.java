@@ -1,7 +1,9 @@
 package sla.org.androidtopsellingalbums;
 
 public interface Displayable {
-
-    String title();
-    String description();
+    void previous();
+    void next();
+    String countText();
+    String titleText();
+    String descriptionText();
 }

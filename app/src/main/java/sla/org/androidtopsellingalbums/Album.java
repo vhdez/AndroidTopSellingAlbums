@@ -2,7 +2,7 @@ package sla.org.androidtopsellingalbums;
 
 import java.util.Scanner;
 
-public class Album implements Displayable {
+class Album {
     private String artist;
     private String album;
     private int year;
@@ -10,21 +10,23 @@ public class Album implements Displayable {
     private float copies;
     private int sales;
 
-    Album(String allData) {
-        Scanner s = new Scanner(allData).useDelimiter("\\s*\\|\\s*");
-        artist = s.next();
-        album = s.next();
-        year = s.nextInt();
-        genre = s.next();
-        copies = s.nextFloat();
-        sales = s.nextInt();
+    // Constructor
+    Album(String albumData) {
+        String[] parts = albumData.split("\\t+", 7);
+        artist = parts[0];
+        album = parts[1];
+        year = Integer.parseInt(parts[2]);
+        genre = parts[3];
+        copies = Float.parseFloat(parts[4]);
+        sales = Integer.parseInt(parts[5]);
     }
 
-    // Interface
-    public String title() {
+    // Methods
+    String title() {
         return artist + " - " + album;
     }
-    public String description() {
+
+    String description() {
         return "Year: " + year + "\nGenre: " + genre + "\nTotal Certified Copies: " + copies + " million\nClaimed sales: " + sales + " million";
     }
 }

@@ -17,9 +17,8 @@ public class AlbumsViewerActivity extends AppCompatActivity {
         TextView countText = findViewById(R.id.countText);
         Button nextButton = findViewById(R.id.nextButton);
         TextView titleText = findViewById(R.id.titleText);
-        TextView descriptiontext = findViewById(R.id.descriptionText);
+        TextView descriptionText = findViewById(R.id.descriptionText);
 
-        controller = new Controller(prevButton, countText, nextButton, titleText, descriptiontext, getApplicationContext());
-
+        controller = new Controller(prevButton, countText, nextButton, titleText, descriptionText, getApplicationContext());
     }
 }

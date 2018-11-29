@@ -13,7 +13,7 @@ public class Controller {
     private TextView titleText;
     private TextView descriptionText;
 
-    private Albums topSellingAlbums;
+    private Displayable topSellingAlbums;
 
     Controller(Button p, TextView c, Button n, TextView tt, TextView dt, Context ctxt) {
         prevButton = p;
@@ -23,38 +23,36 @@ public class Controller {
         descriptionText = dt;
 
         topSellingAlbums = new Albums(ctxt);
-        displayCurrent();
+        updateText();
 
         prevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                displayPrev();
+                previous();
+                updateText();
             }
         });
 
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                displayNext();
+                next();
+                updateText();
             }
         });
     }
 
-    private void displayCurrent() {
-        countText.setText("Top Selling Album #" + (topSellingAlbums.currentIndex()+1) + " of " + topSellingAlbums.count());
-        titleText.setText(topSellingAlbums.current().title());
-        descriptionText.setText(topSellingAlbums.current().description());
+    private void updateText() {
+        countText.setText(topSellingAlbums.countText());
+        titleText.setText(topSellingAlbums.titleText());
+        descriptionText.setText(topSellingAlbums.descriptionText());
     }
 
-    private void displayNext() {
-        topSellingAlbums.next();
-        displayCurrent();
-    }
-
-    private void displayPrev() {
+    private void previous() {
         topSellingAlbums.previous();
-        displayCurrent();
     }
 
-
+    private void next() {
+        topSellingAlbums.next();
+    }
 }
